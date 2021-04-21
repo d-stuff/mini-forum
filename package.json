@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run dev:*\"",
-    "dev:comments": "cd apps/comments && npm run dev",
+    "dev:comments": "cd apps/comments-2 && npm run dev",
     "dev:auth": "cd apps/auth && npm run dev",
     "dev:posts": "cd apps/posts && npm run dev",
     "db": "docker-compose --file ./mongo-compose.yaml up"
