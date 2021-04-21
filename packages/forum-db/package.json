@@ -1,0 +1,11 @@
+{
+  "name": "forum-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.12.2"
+  }
+}

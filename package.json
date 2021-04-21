@@ -1,0 +1,32 @@
+{
+  "name": "mini-forum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:*\"",
+    "dev:comments": "cd apps/comments && npm run dev",
+    "dev:auth": "cd apps/auth && npm run dev",
+    "dev:posts": "cd apps/posts && npm run dev",
+    "db": "docker-compose --file ./mongo-compose.yaml up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-stuff/mini-forum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-stuff/mini-forum/issues"
+  },
+  "homepage": "https://github.com/d-stuff/mini-forum#readme",
+  "dependencies": {
+    "concurrently": "^6.0.2",
+    "nodemon": "^2.0.7"
+  }
+}
