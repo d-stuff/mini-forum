@@ -1,19 +1,16 @@
 import User from '../models/user';
-import jwt from 'jsonwebtoken';
-import { COOKIE_SECRET } from '../config';
+import { signToken } from '../utils/tokens'
 
 const THIRTY_DAYS = 1000*60*60*24*30
 
-const getToken = (data) => {
-    return jwt.sign({ data }, COOKIE_SECRET, { expiresIn: '30d' })
-}
+
 
 export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const userFound: any = await User.findOne({ email, password }) as any;
         const tokenCreated = Date.now();
-        res.cookie("token", getToken({
+        res.cookie("token", signToken({
             _id: userFound._id,
             name: userFound.firstName,
             role: userFound.role,
@@ -43,13 +40,7 @@ export const getMe = (req, res) => {
 
     }
 }
-export const setMe = (req, res) => {
-    try {
 
-    } catch {
-
-    }
-}
 export const updatePersonalInfo = (req, res) => {
     try {
 
