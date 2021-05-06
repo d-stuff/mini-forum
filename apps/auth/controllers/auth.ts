@@ -1,21 +1,20 @@
 import User from '../models/user';
-import { signToken } from '../utils/tokens'
+import { signToken } from '../utils/tokens';
 
 const THIRTY_DAYS = 1000*60*60*24*30
-
-
 
 export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const userFound: any = await User.findOne({ email, password }) as any;
         const tokenCreated = Date.now();
-        res.cookie("token", signToken({
+        const token = signToken({
             _id: userFound._id,
             name: userFound.firstName,
             role: userFound.role,
             tokenCreated
-        }), {maxAge: THIRTY_DAYS})
+        });        
+        res.cookie("token", token, {maxAge: THIRTY_DAYS})
         res.json({
             _id: userFound._id,
             name: userFound.firstName,
@@ -35,9 +34,10 @@ export const register = async (req, res) => {
 }
 export const getMe = (req, res) => {
     try {
-
+        const me = req.user;
+        res.json(me);
     } catch {
-
+        res.status(500).json({ message: "Could not get user"});
     }
 }
 
