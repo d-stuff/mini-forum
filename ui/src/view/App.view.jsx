@@ -6,6 +6,7 @@ import Post from "./Post.view";
 const App = () => {
     return (
         <Box>
+            <h1>fff</h1>
             <Post />
         </Box>
     );
