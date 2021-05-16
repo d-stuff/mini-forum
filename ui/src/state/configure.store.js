@@ -6,7 +6,7 @@ import logger from "../middleware/logger.middleware";
 
 const store = configureStore({
   reducer: {
-    post: postReducer
+    // post: postReducer
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: [...getDefaultMiddleware(), logger]
