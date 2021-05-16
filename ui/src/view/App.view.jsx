@@ -6,7 +6,6 @@ import Post from "./Post.view";
 const App = () => {
     return (
         <Box>
-            <h1>fff</h1>
             <Post />
         </Box>
     );
@@ -14,12 +13,10 @@ const App = () => {
 export default App;
 
 const Box = styled.div`
-  height: 100%;
-  width: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text"; 
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  padding-top: 15rem;
+  background: #ccc;
 `;
