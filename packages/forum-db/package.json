@@ -2,9 +2,12 @@
   "name": "forum-db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "mongoose": "^5.12.2"
   }
