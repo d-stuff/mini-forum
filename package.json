@@ -14,7 +14,12 @@
     "dev:posts": "cd apps/posts && npm run dev",
     "dev:gateway": "cd apps/gateway && npm run dev",
     "dev:ui": "cd apps/ui && npm run dev",
-    "db": "docker-compose --file ./mongo-compose.yaml up"
+    "db": "docker-compose --file ./mongo-compose.yaml up",
+    "start": "concurrently \"npm run start:*\"",
+    "start:comments": "cd apps/comments && npm start",
+    "start:auth": "cd apps/auth && npm start",
+    "start:posts": "cd apps/posts && npm start",
+    "start:gateway": "cd apps/gateway && npm start"
   },
   "repository": {
     "type": "git",
