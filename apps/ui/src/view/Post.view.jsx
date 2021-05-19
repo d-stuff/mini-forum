@@ -28,7 +28,7 @@ const Box = styled.div`
   padding-top: 15rem;
 `;
 
-const SinglePost = styled.h1`
+const SinglePost = styled.div`
   background: #ccc;
   border: 2px solid pink;
 `;

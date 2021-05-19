@@ -13,6 +13,7 @@
     "dev:auth": "cd apps/auth && npm run dev",
     "dev:posts": "cd apps/posts && npm run dev",
     "dev:gateway": "cd apps/gateway && npm run dev",
+    "dev:ui": "cd apps/ui && npm run dev",
     "db": "docker-compose --file ./mongo-compose.yaml up"
   },
   "repository": {
