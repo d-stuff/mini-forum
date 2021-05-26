@@ -41,24 +41,28 @@ export const getMe = (req, res) => {
     }
 }
 
-export const updatePersonalInfo = (req, res) => {
+export const updatePersonalInfo = async (req, res) => {
     try {
-
+        const {firstName, lastName} = req.body;
+        const updatedUser = await User.updateMany({firstName, lastName});
+        res.json(updatedUser);
     } catch {
-
+        res.status(500).json({ message: "Could not update user"});
     }
 }
-export const changePassword = (req, res) => {
+export const changePassword = async (req, res) => {
     try {
-
+        const {password} = req.body;
+        const updatedPassword = await User.updateOne({password});
+        res.json(updatedPassword);
     } catch {
-
+        res.status(500).json({ message: "Could not update password"});
     }
 }
 export const logout = (req, res) => {
     try {
-
+        res.cookie("token", "", {maxAge: Date.now()})
     } catch {
-
+        res.status(500).json({ message: "Could not logout"});
     }
 }
