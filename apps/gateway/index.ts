@@ -9,6 +9,10 @@ app.use(['/api/comments', '/api/posts'], async function checkAuth(req, res, next
     try {
     const response = await fetch('http://localhost:4000/api/me', {headers: {cookie: req.headers.cookie}})
     const user = await response.text();
+    const setCookie = response.headers.get('set-cookie')
+    if (setCookie) {
+        res.append('set-cookie', setCookie);
+    }
     req.headers.user = user;
     } catch {
         req.headers.user = '';

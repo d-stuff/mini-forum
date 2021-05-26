@@ -4,8 +4,13 @@ import { getPosts, createPost, updatePost, deletePost } from "../controllers/pos
 const postsRouter = Router();
 
 const verifyUser = (req, res, next) => {
-    req.user = { _id: "6080448d9d930c4c2ca1cb1c"};
-    next();
+    if (req.headers.user) {
+        req.user = JSON.parse(req.headers.user)
+        next();
+    }
+    else {
+        res.status(401).json({ message: "Not authorized" })
+    }
 }
 
 
