@@ -23,4 +23,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../ui/build/index.html'));
   })
 
-app.listen(process.env.PORT || 8080, () => console.log('Gateway app is running!'))
+app.listen(process.env.PORT || 8080, () => console.log('Gateway app is running! on Port: ', process.env.PORT))
