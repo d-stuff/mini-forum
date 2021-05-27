@@ -1,11 +1,11 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-
+import postsReducer from "./posts.slice";
 
 import logger from "../middleware/logger.middleware";
 
 const store = configureStore({
   reducer: {
-    // post: postReducer,
+    post: postsReducer,
     // comment: commentReducer
   },
   devTools: process.env.NODE_ENV !== "production",

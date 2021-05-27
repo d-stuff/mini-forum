@@ -1,16 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import {useSelector} from "react-redux"
 
 
-const Post = (props) => {
+
+
+const Post = ({ content, author, likes, timeOfUpload }) => {
+
+  // const {content, author, likes, timeOfUpload} = useSelector(state => state.posts)
+
   return (
     <Box>
         <SinglePost>
-          <h2>Post content</h2>
-          <p>author</p>
-          <p>likes</p>
-          <p>comments</p>
-          <p>time of upload</p>
+          <h2>{content}</h2>
+          <p>{author}</p>
+          <p>{likes}</p>
+          <button>Comments</button>
+          <p>{timeOfUpload}</p>
         </SinglePost>
     </Box>
   );
@@ -23,12 +29,19 @@ const Box = styled.div`
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  padding-top: 15rem;
+  padding:3px;
 `;
 
 const SinglePost = styled.div`
-  background: #ccc;
+  background: #EDFFEF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 2px solid pink;
+  &:hover {
+    background: #FFFFFF;
+    transition: 0.1s;
+  }
 `;
