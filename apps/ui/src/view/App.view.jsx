@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import Post from "./Post.view";
 import Home from "./Home.view";
+import NoMatch from "./NoMatch.view"
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -10,6 +11,7 @@ const Links = () => (
     <Nav>
         <li>
             <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="wrong">Wrong</StyledLink>
         </li>
     </Nav>
 );
@@ -22,6 +24,7 @@ const App = () => (
             </div>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route component={NoMatch} />
             </Switch>
         </Box>
     </Router>
@@ -36,6 +39,8 @@ const Box = styled.div`
 
 const StyledLink = styled(Link)`
   color: black;
+  padding 0px 5px;
+  background:#ccc;
 `;
 
 const Nav = styled.ul`

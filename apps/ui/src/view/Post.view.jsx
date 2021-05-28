@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import {useSelector} from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 
 
 
 
 const Post = ({ content, author, likes, timeOfUpload }) => {
-
+  const dispatch = useDispatch();
   // const {content, author, likes, timeOfUpload} = useSelector(state => state.posts)
-
+  //onClick={() => dispatch(comment())}
   return (
     <Box>
-        <SinglePost>
-          <h2>{content}</h2>
-          <p>{author}</p>
-          <p>{likes}</p>
-          <button>Comments</button>
-          <p>{timeOfUpload}</p>
-        </SinglePost>
+      <SinglePost>
+        <h2>{content}</h2>
+        <p>{author}</p>
+        <p>{likes}</p>
+        <button>Comments</button>
+        <p>{timeOfUpload}</p>
+      </SinglePost>
     </Box>
   );
 };
