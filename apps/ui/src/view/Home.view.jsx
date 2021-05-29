@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Post from "./Post.view"
+import Hello from "./Hello.view"
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <Box>
         <SinglePost>
           <Subject>I am a Mini Forum</Subject>
+          <Hello/>
           <Post/>
           <Post/>
           <Post/>

@@ -1,22 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux"
+// import { comment } from "../state/posts.slice"
+import { fakePosts } from "../api/posts.api"
+import postsSlice from "../state/posts.slice";
 
 
 
 
-const Post = ({ content, author, likes, timeOfUpload }) => {
+const Post = () => {
   const dispatch = useDispatch();
-  // const {content, author, likes, timeOfUpload} = useSelector(state => state.posts)
+  // const {} = useSelector(state => posts.state);
   //onClick={() => dispatch(comment())}
   return (
     <Box>
       <SinglePost>
-        <h2>{content}</h2>
-        <p>{author}</p>
-        <p>{likes}</p>
-        <button>Comments</button>
-        <p>{timeOfUpload}</p>
+        <Content>Content: {fakePosts[0].content}</Content>
+        <PostData>
+        <Element>Author: {fakePosts[0].author}</Element>
+        <Element>Likes: {fakePosts[0].likes}</Element>
+        {/* <button onClick={()=>dispatch(comment())}>Comments</button> */}
+        <Element>Uploaded: {fakePosts[0].timeOfUpload}</Element>
+        </PostData>
       </SinglePost>
     </Box>
   );
@@ -32,6 +37,30 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   padding:3px;
+`;
+
+const PostData = styled.div`
+display: flex;
+align-items: stretch;
+`;
+
+const Content = styled.p`
+display: flex;
+color:white;
+background: black;
+align-items: center;
+justify-content: center;
+font-size: 2rem;
+`;
+
+const Element = styled.p`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #eee;
+  border: 1px solid black;
 `;
 
 const SinglePost = styled.div`
