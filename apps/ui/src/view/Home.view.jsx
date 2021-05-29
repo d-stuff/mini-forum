@@ -30,11 +30,20 @@ const Box = styled.div`
 `;
 
 const SinglePost = styled.div`
-  background: #DDF1FF;
+  background: white;
   border: 2px solid pink;
+  padding: 0px 15rem;
+  border-radius:10px;
 `;
 
 const Subject = styled.h2`
-  background: #E0BBE4;
+  background: #ccc;
   border: 2px solid #pink;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:3px;
+  font-family: "Yanone Kaffeesatz";
 `;
